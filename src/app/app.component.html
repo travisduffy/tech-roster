@@ -1,0 +1,30 @@
+<!-- Loading Overlay -->
+<div *ngIf="dataService.loading" class="loading-overlay">
+  <i class="fas fa-sync-alt fa-spin"></i>
+</div>
+
+<div class="wrapper">
+  <!-- Header -->
+  <header>
+    <h1>🛠️ TechRoster Admin</h1>
+    <hr />
+  </header>
+  <br />
+  <!-- Router -->
+  <router-outlet></router-outlet>
+  <br />
+  <!-- Footer -->
+  <footer>
+    <hr />
+    <small class="muted-txt">A MEAN stack project</small><br />
+    <small class="muted-txt"
+      >by
+      <a
+        href="https://github.com/travisduffy"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Travis Duffy</a
+      ></small
+    >
+  </footer>
+</div>

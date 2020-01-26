@@ -1,0 +1,154 @@
+.wrapper {
+  width: 100%;
+  padding: 0 15px 0 15px;
+  margin: 0 auto 0 auto;
+}
+
+.flex,
+.flex-md,
+.flex-lg,
+.flex-xl {
+  @include displayFlex();
+  flex-direction: column;
+  flex-wrap: wrap;
+  &-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+.half-width,
+.half-width-md,
+.half-width-lg,
+.half-width-xl {
+  width: 100%;
+}
+
+@media only screen and (min-width: $sm) {
+  .wrapper {
+    max-width: 540px;
+  }
+  .flex {
+    flex-direction: row;
+  }
+  .half-width {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: $md) {
+  .wrapper {
+    max-width: 720px;
+  }
+  .flex-md {
+    flex-direction: row;
+  }
+  .half-width-md {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: $lg) {
+  .wrapper {
+    max-width: 960px;
+  }
+  .flex-lg {
+    flex-direction: row;
+  }
+  .half-width-lg {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: $xl) {
+  .wrapper {
+    max-width: 1140px;
+  }
+  .flex-xl {
+    flex-direction: row;
+  }
+  .half-width-xl {
+    width: 50%;
+  }
+}
+
+.form {
+  margin: 1rem 0 1.5rem 0;
+
+  &-item {
+    margin: 1rem 0;
+  }
+
+  & input[type="text"] {
+    display: block;
+    width: 100%;
+    min-height: 1rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: $colorMuted;
+    background-color: $colorBg;
+    border: 1px solid $colorAccent;
+  }
+
+  & input[type="checkbox"] {
+    margin: 0.5rem 0.5rem;
+  }
+
+  & select {
+    display: block;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 0.25rem;
+    padding: 0 0.25rem;
+  }
+
+  & textarea {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: inherit;
+    color: $colorMuted;
+    background-color: $colorBg;
+    border: 1px solid $colorAccent;
+  }
+}
+
+.muted-txt {
+  color: $colorMuted;
+}
+
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+.danger-text {
+  color: tomato;
+}
+
+.checkbox-container {
+  padding: 0.5rem 0;
+  &:nth-child(even) {
+    background-color: $colorBg-alt;
+  }
+}
+
+.loading-overlay {
+  position: fixed;
+  z-index: 999;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow: show;
+  margin: auto;
+  background-color: $colorAccent;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 48px;
+}

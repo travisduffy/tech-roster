@@ -1,0 +1,17 @@
+<div *ngIf="dataService.activeCourse">
+  <p><strong>Are you sure you want to delete the following course?</strong></p>
+  <br />
+  <div class="half-width-lg">
+    <h3>{{ dataService.activeCourse.code }}</h3>
+    <p>{{ dataService.activeCourse.name }}</p>
+  </div>
+  <br />
+  <button
+    (click)="dataService.delete(dataService.activeCourse._id, 'courses')"
+    [routerLink]="['/']"
+    class="box-shadow"
+  >
+    Ok
+  </button>
+  <button [routerLink]="['/']" class="box-shadow">Cancel</button>
+</div>

@@ -1,0 +1,48 @@
+<div>
+  <h3>Edit course:</h3>
+
+  <div class="form">
+    <div class="form-item">
+      <label for="code"><span class="danger-text">* </span>Code:</label>
+      <input
+        [(ngModel)]="inputCode"
+        id="code"
+        type="text"
+        class="form-input"
+        placeholder="Course code"
+        maxlength="50"
+        required
+      />
+      <small *ngIf="validationService.errCourseCode" class="danger-text">
+        Invalid code - required field, max 50 characters
+      </small>
+    </div>
+
+    <div class="form-item">
+      <label for="name"><span class="danger-text">* </span>Name:</label>
+      <input
+        [(ngModel)]="inputName"
+        id="name"
+        type="text"
+        class="form-input"
+        placeholder="Course name"
+        maxlength="100"
+        required
+      />
+      <small *ngIf="validationService.errCourseName" class="danger-text">
+        Invalid name - required field, max 100 characters
+      </small>
+    </div>
+  </div>
+
+  <button (click)="submit()" class="box-shadow">
+    Ok
+  </button>
+  <button
+    [routerLink]="['/']"
+    (click)="validationService.reset()"
+    class="box-shadow"
+  >
+    Cancel
+  </button>
+</div>

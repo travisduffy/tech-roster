@@ -1,0 +1,19 @@
+<div *ngIf="dataService.activeTech">
+  <p>
+    <strong>Are you sure you want to delete the following technology?</strong>
+  </p>
+  <br />
+  <div class="half-width-lg">
+    <h3>{{ dataService.activeTech.name }}</h3>
+    <p>{{ dataService.activeTech.description }}</p>
+  </div>
+  <br />
+  <button
+    (click)="dataService.delete(dataService.activeTech._id, 'techs')"
+    [routerLink]="['/']"
+    class="box-shadow"
+  >
+    Ok
+  </button>
+  <button [routerLink]="['/']" class="box-shadow">Cancel</button>
+</div>

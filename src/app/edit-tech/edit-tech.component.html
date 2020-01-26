@@ -1,0 +1,77 @@
+<div>
+  <h3>Edit technology:</h3>
+
+  <div class="form">
+    <!-- Name -->
+    <div class="form-item half-width-lg">
+      <label for="name"><span class="danger-text">* </span>Name</label>
+      <input
+        [(ngModel)]="inputName"
+        id="name"
+        type="text"
+        class="form-input"
+        placeholder="Technology name"
+        maxlength="50"
+      />
+      <small *ngIf="validationService.errTechName" class="danger-text"
+        >Invalid name - required field, max 50 characters
+      </small>
+    </div>
+
+    <!-- Description -->
+    <div class="form-item">
+      <label for="description"
+        ><span class="danger-text">* </span>Description</label
+      >
+      <textarea
+        [(ngModel)]="inputDesc"
+        id="description"
+        cols="45"
+        rows="3"
+        placeholder="Technology description"
+        maxlength="300"
+      ></textarea>
+      <small *ngIf="validationService.errTechDesc" class="danger-text">
+        Invalid description - required field, max 300 characters
+      </small>
+    </div>
+
+    <!-- Difficulty -->
+    <div class="form-item">
+      <label for="difficulty">Difficulty</label>
+      <select [(ngModel)]="inputDiff" id="difficulty">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+
+    <!-- Courses -->
+    <div class="form-item">
+      <span>Used in courses:</span>
+      <div class="checkbox-container" *ngFor="let course of inputCourses">
+        <input
+          type="checkbox"
+          [(ngModel)]="course.checked"
+          id="course-{{ course._id }}"
+        />
+        <label for="course-{{ course._id }}"
+          >{{ course.code }} {{ course.name }}</label
+        >
+      </div>
+    </div>
+  </div>
+
+  <button (click)="submit()" class="box-shadow">
+    Ok
+  </button>
+  <button
+    [routerLink]="['/']"
+    (click)="validationService.reset()"
+    class="box-shadow"
+  >
+    Cancel
+  </button>
+</div>

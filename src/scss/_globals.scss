@@ -1,0 +1,46 @@
+//--- Imports
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("/assets/fonts/RobotoSlab-Light.ttf");
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("/assets/fonts/Ubuntu-Regular.ttf");
+}
+
+//--- Colours
+
+//- DARK MODE
+// $colorBg: #1e1e1e;
+// $colorBg-alt: #2c2c2c;
+// $colorText: rgb(233, 233, 233);
+// $colorLink: #99ebff;
+// $colorMuted: #c5c5c5;
+// $colorAccent: rgb(255, 183, 142);
+
+//- LIGHT MODE
+$colorBg: #fff;
+$colorBg-alt: #eee;
+$colorText: #1e1e1e;
+$colorLink: #0057bb;
+$colorMuted: #616161;
+$colorAccent: rgb(255, 97, 35);
+
+//--- Fonts
+$fontBody: "Ubuntu";
+$fontMain: "Roboto Slab";
+
+//--- Breakpoints
+$sm: "576px";
+$md: "768px";
+$lg: "992px";
+$xl: "1200px";
+
+//--- Mixins
+@mixin displayFlex() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}

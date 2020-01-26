@@ -1,0 +1,90 @@
+<!-- Technologies/Courses lists -->
+<div class="flex-lg">
+  <!-- Technologies -->
+  <div class="flex-item menu-column">
+    <h2>
+      ⚙️ Technologies
+      <span
+        ><a [routerLink]="['/add-tech']"><i class="fas fa-plus add-icon"></i></a
+      ></span>
+    </h2>
+    <ul class="menu-list box-shadow">
+      <li *ngFor="let tech of dataService.technologies">
+        <span>
+          <a [routerLink]="['/edit-tech', tech._id]">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a [routerLink]="['/delete-tech', tech._id]">
+            <i class="far fa-trash-alt"></i>
+          </a>
+        </span>
+
+        <a href="#{{ tech.name }}">
+          {{ tech.name }}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Courses -->
+  <div class="flex-item menu-column">
+    <h2>
+      📖 Courses
+      <span
+        ><a [routerLink]="['/add-course']"
+          ><i class="fas fa-plus add-icon"></i></a
+      ></span>
+    </h2>
+    <ul class="menu-list box-shadow">
+      <li *ngFor="let course of dataService.courses">
+        <span>
+          <a [routerLink]="['/edit-course', course._id]">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a [routerLink]="['/delete-course', course._id]">
+            <i class="far fa-trash-alt"></i>
+          </a>
+        </span>
+        {{ course.code }} {{ course.name }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Technologies Display -->
+<div class="wrapper">
+  <div
+    *ngFor="let tech of dataService.technologies"
+    class="tech-card half-width-xl"
+    id="{{ tech.name }}"
+  >
+    <hr />
+    <h3>
+      {{ tech.name }}
+    </h3>
+    <div class="tech-card--body">
+      <p>Difficulty: {{ tech.difficulty }}</p>
+      <small>{{ tech.description }}</small>
+      <p>Featured in courses:</p>
+      <ul>
+        <li *ngFor="let course of tech.courses">
+          <small>{{ course.code }} - {{ course.name }}</small>
+        </li>
+      </ul>
+      <span>
+        <a [routerLink]="['/edit-tech', tech._id]">
+          <i class="fas fa-edit"></i>
+        </a>
+        <a [routerLink]="['/delete-tech', tech._id]">
+          <i class="far fa-trash-alt"></i>
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="back-to-top">
+  <a href="#">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+</div>
